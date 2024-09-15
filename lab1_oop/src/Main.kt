@@ -19,14 +19,16 @@ fun main() {
     val a = readln().toFloat()
     print("Введите y3: ")
     val b = readln().toFloat()
-    val twoVec =  twoBeginVectors(x1, y1, x2, y2, a, b)
-    twoVec.parallelogram_square();
+    val twoVec =  TwoBeginVectors(x1, y1, x2, y2, a, b)
+    twoVec.parallelogramSquare()
+    println("Координаты середины двух векторов: ")
+    twoVec.middleVectorCord()
 }
 open class VectorOnPlane(val x1: Float, val y1: Float, val x2: Float, val y2: Float){
    open fun middleVectorCord(){
         val nX = (x1 + x2) / 2
-        val nY = (y1 + y2) / 23
-        println("Кординаты середины вектора равны: $nX, $nY")
+        val nY = (y1 + y2) / 2
+        println("Координаты середины вектора равны: $nX, $nY")
     }
     open fun definition45degree(){
         val angel = atan((y2-y1)/(x2-x1))
@@ -48,5 +50,12 @@ class twoBeginVectors(x1: Float, y1: Float, x2: Float, y2: Float, val x3: Float,
         val sinus = 1 - cosines.pow(2)
         val s = len1 * len2 * sinus
         println("Площадь параллелограмма равна: $s")
+    }
+
+    override fun middleVectorCord() {
+        super.middleVectorCord()
+        val nX2 = (a*x1 + a * x2) / 2
+        val nY2 = (b*y1 + b * y2) / 2
+        println("Координаты середины второго вектора равны: $nX2, $nY2")
     }
 }
