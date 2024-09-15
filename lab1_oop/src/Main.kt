@@ -19,8 +19,8 @@ fun main() {
     val a = readln().toFloat()
     print("Введите y3: ")
     val b = readln().toFloat()
-    val twoVec =  TwoBeginVectors(x1, y1, x2, y2, a, b)
-    twoVec.parallelogramSquare()
+    val twoVec = twoBeginVectors(x1, y1, x2, y2, a, b)
+    twoVec.parallelogram_square()
     println("Координаты середины двух векторов: ")
     twoVec.middleVectorCord()
 }
@@ -54,8 +54,8 @@ class twoBeginVectors(x1: Float, y1: Float, x2: Float, y2: Float, val x3: Float,
 
     override fun middleVectorCord() {
         super.middleVectorCord()
-        val nX2 = (a*x1 + a * x2) / 2
-        val nY2 = (b*y1 + b * y2) / 2
+        val nX2 = (x1 + x3) / 2
+        val nY2 = (y1 + y3) / 2
         println("Координаты середины второго вектора равны: $nX2, $nY2")
     }
 }
